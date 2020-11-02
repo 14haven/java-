@@ -1,0 +1,116 @@
+//추상화 패키지  & 접근제한자 
+
+// ClassExam01.java 파일  
+
+package object.abstraction;
+
+// 클래스의 구성요소
+
+public class ClassExam01 {
+	// 속성 = 멤버 변수 = 필드(Field)
+	public int num1;
+	public double num2;
+	public String str;
+	
+	// 생성자
+	
+	// 기능 = 멤버 메서드
+	public void method1() {
+		System.out.println("멤버 메서드1");
+	}
+}
+
+
+// Student.java 파일  
+package object.abstraction;
+
+// 메소드를 이용해서 필드 바꾸
+public class Student {
+	// 학생관리
+	// 속성
+	// 이름, 성별, 나이, 학년, 반, 번호
+	public String name;
+	public char sex;
+	public int age;
+	public int grade;
+	public int cls; 
+	public int number;
+	
+	
+	// 기능
+	// 학년/반/번호 변경
+	public void changeGrade(int chGrade) {
+		grade = chGrade;
+	}
+	public void changeClass(int chClass) {
+		cls = chClass;
+	}
+	public void changeNumber(int chNumber) {
+		number = chNumber;
+	}
+	// 학생정보 출력
+	public void printStudent() {
+		System.out.println("이름 : "+name);
+		System.out.println("나이 : "+age);
+		System.out.println("성별 : "+sex);
+		System.out.println(grade+"학년 "+cls+"반 "+number+"번 ");
+	}
+}
+
+
+
+// 실행파일
+
+package object.abstraction;
+
+import object.encapsulation.EncapsulationExam01;
+
+public class Run {
+
+	public static void main(String[] args) {
+		// 다른 패키지의 클래스 내부
+		EncapsulationExam01 ee2 = new EncapsulationExam01(); //다른 패키지에 있기 때문에 에러 뜸
+		ee2.print();
+		ee2.var1 = 1000;	// public - 사용 가능
+		//ee2.var2 = 2000;	// private - 사용 불가능
+		//ee2.var3 = 3000;	//default - 사용 불가능
+		ee2.method01();     // public - 사용 가능
+		//ee2.method02(); 	// private - 사용 불가능
+		//ee2.method03(); 	// default - 사용 불가능
+		
+		
+//		Student st1 = new Student();
+//		st1.name = "홍길동";
+//		st1.sex = '남';
+//		st1.age = 14;
+//		st1.grade = 1;
+//		st1.cls = 5;
+//		st1.number = 12;
+//		st1.printStudent();
+//		st1.changeClass(1);
+//		st1.printStudent();
+//		
+//		Student st2 = new Student();
+		
+		
+//		// 일반 변수 사용
+//		int num;
+//		num = 10;
+//		// 배열 사용
+//		int[] arr = new int[5];
+//		arr[0] = 10;
+//		arr[1] = 20;
+//		// 객체 사용
+//		ClassExam01 ce = new ClassExam01();
+//		ce.num1 = 10;
+//		ce.num2 = 3.5;
+//		ce.str = "안녕하세요";
+//		System.out.println(ce.num1);
+//		System.out.println(ce.num2);
+//		System.out.println(ce.str);
+//		
+//		ce.method1();
+		
+	}
+
+}
