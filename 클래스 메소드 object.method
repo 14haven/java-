@@ -1,0 +1,102 @@
+// 클래스에서 메소드 만드는 법
+// 반환값, 매개변수 유무
+// 매개변수에 배열이나 객체 넣었을 때
+
+
+
+package object.method;
+
+public class MethodExam01 {
+	// 필드 부
+	// 생성자 부
+	// 메소드 부
+	public void func1() {	// 반환값 X, 매개변수 X
+		System.out.println("메소드1 실행");
+	}
+	public void func2(int num) {	// 반환값 X, 매개변수 O
+		System.out.println("메소드2 실행");
+		System.out.println("입력 값 : "+num);
+	}
+	public double func3() {	// 반환값 O, 매개변수 X
+		System.out.println("메소드3 실행");
+		return 3.5;
+	}
+	public int func4(int num1, int num2) {	// 반환값 O, 매개변수 O
+		// 숫자 2개 입력받아서 더한 결과값을 반환해주는 메서드
+		System.out.println("메소드4 실행");
+		return num1 + num2;
+	}
+	
+	// 매개변수 실습 - 여러 자료형의 매개변수 입력
+	public void func5(int num1, char ch, double num2) {	 
+		System.out.println("메소드5 실행");
+		System.out.println(num1+" , "+ch+" , "+num2);
+	}
+	// 매개변수 실습 - 참조자료형 매개변수
+	public void func6(int num) {
+		num += 10;
+		System.out.println("메소드 6 실행 : "+num);
+	}
+	public void func7(int[] arr) {
+		arr[0] += 10;
+		System.out.println("메소드 7 실행 : "+arr[0]);
+	}
+	public void func8(MethodExam02 me02) {
+		me02.name = "이길동";
+		me02.age += 5;
+		me02.height = 175.5;
+		System.out.println("메소드 8 실행 : "+me02.name);
+		System.out.println("메소드 8 실행 : "+me02.age);
+		System.out.println("메소드 8 실행 : "+me02.height);
+	}
+
+}
+
+
+
+
+
+package object.method;
+
+public class MethodExam02 {
+	public String name;
+	public int age;
+	public double height;
+	
+}
+
+
+
+
+// 실행파일
+
+package object.method;
+
+public class Run {
+
+	public static void main(String[] args) {
+		MethodExam01 me = new MethodExam01();
+//		me.func1();
+//		me.func2(10);
+//		double num = me.func3();
+//		System.out.println(num); 
+//		int sum = me.func4(10, 20);
+//		System.out.println(sum);
+//		me.func5(10, '가', 5.7);
+		int num2 = 100;
+		System.out.println(num2);
+		me.func6(num2); // Call by Value : 값을 넘겨주면서 메소드를 호출
+		System.out.println(num2);
+		int[] arr1 = new int[] {10,20,30,40,50};
+		System.out.println(arr1[0]);
+		me.func7(arr1); // Call by Address, Call by Refefnce 참조를 이용한 호출
+		System.out.println(arr1[0]);
+		MethodExam02 meme = new MethodExam02();
+		meme.name = "홍길동";
+		meme.age = 20;
+		meme.height = 160.2;
+		System.out.println("이름 : "+meme.name+", 나이: "+meme.age+", 키: "+meme.height);
+		me.func8(meme); 
+	}
+
+}
