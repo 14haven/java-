@@ -89,7 +89,7 @@ public class Run {
 		System.out.println(num2);
 		int[] arr1 = new int[] {10,20,30,40,50};
 		System.out.println(arr1[0]);
-		me.func7(arr1); // Call by Address, Call by Refefnce 참조를 이용한 호출
+		me.func7(arr1); // Call by Address, Call by Reference 참조를 이용한 호출
 		System.out.println(arr1[0]);
 		MethodExam02 meme = new MethodExam02();
 		meme.name = "홍길동";
