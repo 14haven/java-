@@ -1,0 +1,123 @@
+// final 상수
+
+package object.Field;
+
+public class FinalFieldExam {
+	public int num1;
+	public final int NUM2 = 20;
+	
+}
+
+
+// 필드 초기화
+
+package object.Field;
+
+public class InitialExam {
+//	public boolean var1 = true;		// 논리형
+	public int var1 = 10;			// 정수형
+	public static int var2 = 10;		// 정수형, 클래스 변수
+//	public char var4 = 'A';			// 문자형
+//	public String var5 = "Hello";	// 문자열형
+//	// static 초기화 블록
+//	static {
+//		var2 = 20;
+//	}
+//	// 인스턴스 초기화 블록
+//	{
+//		var1 = false;
+//		var3 = 2.5;
+//		var4 = 'B';
+//		var5 = "안녕하세요";
+//	}
+	
+}
+
+
+// 생성자 초기화를 이용해서 만든 객체 수 세기
+
+package object.Field;
+
+public class StaticFieldExam {
+//	public int var1;		// 인스턴스변수 = 멤버변수
+//	public static int var2;	// 클래스 변수
+	
+	
+	public static int count=0;  
+	public StaticFieldExam() {
+	count += +1;
+	}
+	
+}
+
+
+
+// 실행 파일
+
+package object.Field;
+
+public class Run {
+
+	public static void main(String[] args) {
+		InitialExam.var2 = 100;
+		System.out.println(InitialExam.var2);
+		InitialExam ie201 = new InitialExam();
+		System.out.println(ie201.var1);
+		System.out.println(ie201.var2);
+		
+//		// 초기화
+//		InitialExam ie = new InitialExam();
+//		System.out.println("### 초기값 ###");
+//		System.out.println(ie.var1);
+//		System.out.println(ie.var2);
+//		System.out.println(ie.var3);
+//		System.out.println(ie.var4);
+//		System.out.println(ie.var5);
+//		
+//		ie.var2 = 30;
+//		InitialExam ie2 = new InitialExam();
+//		System.out.println(ie2.var2); // 
+		
+		
+//		// final 필드
+//		FinalFieldExam ffe = new FinalFieldExam();
+//		ffe.num1 = 10;
+//		//ffe.NUM2 = 100; // final Field - 값 대입 불가능
+//		System.out.println(ffe.NUM2); // final Field = 값 읽는건 잘됨
+		
+	
+			
+		
+		// static으로 카운트하기
+//		System.out.println(StaticFieldExam.count);
+//		StaticFieldExam sfe1 = new StaticFieldExam();
+//		System.out.println(sfe1.count);
+//		StaticFieldExam sfe2 = new StaticFieldExam();
+//		System.out.println(sfe2.count);
+//		StaticFieldExam sfe3 = new StaticFieldExam();
+//		System.out.println(sfe3.count);
+		
+		
+		
+		
+//		StaticFieldExam.var2 = 10;
+//		System.out.println(StaticFieldExam.var2);
+//		StaticFieldExam sfe = new StaticFieldExam();
+//		StaticFieldExam sfe2 = new StaticFieldExam();
+//		System.out.println("초기 상태");
+//		System.out.println(sfe.var1);
+//		System.out.println(sfe.var2);
+//		System.out.println(sfe2.var1);
+//		System.out.println(sfe2.var2);
+//		sfe.var1 = 100;
+//		sfe.var2 = 200;
+//		System.out.println("sfe 객체 값 대입");
+//		System.out.println(sfe.var1);
+//		System.out.println(sfe.var2);
+//		System.out.println(sfe2.var1);
+//		System.out.println(sfe2.var2);
+		
+	}
+
+}
+
