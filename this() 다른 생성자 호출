@@ -1,0 +1,31 @@
+// this(), 다른 생성자 호출
+public class Book{
+
+// 필드부
+String title;
+String author;
+int ISBN;
+
+// 생성자부
+public Book(String title, String author, int ISBN){ //[1]
+this.title = title;
+this.author = author;
+this.ISBN = ISBN;
+}
+
+public Book(String title, int ISBN){  //[2]
+this(title,"Anonymous",ISBN); //[3]->[1]
+}
+
+public Book(){
+this(null,null,0);
+System.out.println("생성자가 호출되었음");
+}
+
+public static void main(String[] agrs){
+Book javaBook = new Book("Java JDK","황기태",3333);
+Book holyBible = new Book("Holy Bible",1);  //[4]->[2]
+Book emptyBook = new Book(); 
+}
+
+
