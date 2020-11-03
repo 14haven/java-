@@ -1,0 +1,136 @@
+object.method
+
+
+
+MethodExam01
+
+
+	// 매개변수 실습 - 가변인자
+	public void func9(int ...num) {
+		System.out.println("메소드9 실행 : ");
+		System.out.println(num);
+	}
+
+		
+Run 실행파일  //가변인자
+		me.func9(10,20,30);
+	
+
+	
+	
+	// 반환자료형 실습
+	public int func10(int num) {
+		System.out.println("메소드10 실행");
+		if(num == 0)	 //num에 0이 입력되면 10을 돌려줘라
+		return 10;
+		System.out.println("메소드10 실행2");
+		return 20; //num에 0이 아닌 다른 수가 입력되면 20을 돌려줌
+	}
+}
+Run 실행파일	// 반환자료형 실습
+//		MethodExam01 me = new MethodExam01();
+//		System.out.println(me.func10(10));
+//		System.out.println("메인메서드 내용");
+
+
+
+
+	// setter & getter
+	
+public class MethodExam02 {
+
+	public String name;
+	public int age;
+	public double height;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public double getHeight() {
+		return height;
+	}
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	
+}
+	//오버로딩
+	public void func() {
+		System.out.println("1번째 메소드");
+	}
+	public void func(int num) {
+		System.out.println("2번째 메소드");
+
+	}
+	public void func(char ch) {
+		System.out.println("3번째 메소드");
+	}
+	public void func(int num1, int num2) {
+		System.out.println("4번째 메소드");
+	}
+
+	
+
+	// this
+	public void printName() {
+		String name = "이길동";
+		System.out.println(name);
+		System.out.println(this.name);
+	}
+
+
+
+Run 실행파일 
+
+		// getter & setter
+
+		MethodExam03 me03 = new MethodExam03();
+//		me03.name = "홍길동";
+//		System.out.println(me03.name);
+		
+		me03.setName("이길동");
+		System.out.println(me03.getName());
+		me03.setSex('남');
+		System.out.println(me03.getSex());
+
+
+		
+		// 오버로딩
+//		me03.func();
+//		me03.func(10);
+//		me03.func('A');
+//		me03.func(100,200);
+		
+
+
+		// this
+//		me03.printName();
+//		
+
+
+
+	
+
+//	this()사용 예시 - ConstructorExam.java
+	public class ConstructorExam {
+		public String name;
+		pubic int age;
+
+	public ConstructorExam() {		// 입력값이 없을 때 사용되는 생성자
+		this("입력없음",0); 		//-> this() 가장 위에 와야 한다.
+		// -> 이때는 name 이 입력없음이 되고 age가 0이 된다.
+		System.out.println("생성자 1 호출");
+	}
+	public ConstructorExam(String name, int age) {
+		System.out.println("생성자 2 호출");
+	}
+
+	}
